@@ -20,7 +20,15 @@ export const SocketProvider = ({ children }) => {
   useEffect(() => {
     if (user) {
       // Get the API URL from env or default to production Render URL
-      const apiUrl = import.meta.env.VITE_API_URL || 'https://invigo-qehc.onrender.com/api'
+      // Get the API URL from env or default to production Render URL
+      let apiUrl = import.meta.env.VITE_API_URL || 'https://invigo-qehc.onrender.com/api'
+
+      // SAFETY CHECK: If for any reason the URL is localhost (misconfiguration), force production
+      if (apiUrl.includes('localhost')) {
+        console.warn('⚠️ Detected localhost in production API URL. Switching to Render URL.')
+        apiUrl = 'https://invigo-qehc.onrender.com/api'
+      }
+
       // Remove '/api' suffix if present to get the root URL for socket.io
       const socketUrl = apiUrl.replace(/\/api\/?$/, '')
 
