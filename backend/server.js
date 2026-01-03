@@ -17,12 +17,20 @@ const app = express();
 const server = http.createServer(app);
 const io = socketIo(server, {
   cors: {
-    origin: [
-      "http://localhost:3000",
-      "http://localhost:5173",
-      "https://invigo.vercel.app",
-      "https://schedulo-three.vercel.app"
-    ],
+    origin: (origin, callback) => {
+      const allowedOrigins = [
+        "http://localhost:3000",
+        "http://localhost:5173",
+        "https://invigo.vercel.app",
+        "https://schedulo-three.vercel.app",
+        "https://schedulo-i52jw7fj9-thanujkrishna22-1138s-projects.vercel.app"
+      ];
+      if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+        callback(null, true);
+      } else {
+        callback(new Error('Not allowed by CORS'));
+      }
+    },
     methods: ["GET", "POST"],
     credentials: true
   }
@@ -30,12 +38,20 @@ const io = socketIo(server, {
 
 // Middleware
 app.use(cors({
-  origin: [
-    "http://localhost:3000",
-    "http://localhost:5173",
-    "https://invigo.vercel.app",
-    "https://schedulo-three.vercel.app"
-  ],
+  origin: (origin, callback) => {
+    const allowedOrigins = [
+      "http://localhost:3000",
+      "http://localhost:5173",
+      "https://invigo.vercel.app",
+      "https://schedulo-three.vercel.app",
+      "https://schedulo-i52jw7fj9-thanujkrishna22-1138s-projects.vercel.app"
+    ];
+    if (!origin || allowedOrigins.includes(origin) || origin.endsWith('.vercel.app')) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
   credentials: true
 }));
 app.use(express.json());
