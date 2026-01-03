@@ -82,8 +82,8 @@ const IconContainer = styled(Box)(({ theme, bgcolor }) => ({
   boxShadow: '0 4px 12px rgba(26, 86, 219, 0.3)',
   transition: 'all 0.3s ease',
   [theme.breakpoints.down('sm')]: {
-    width: 40,
-    height: 40,
+    width: 36,
+    height: 36,
   },
 }))
 
@@ -223,8 +223,8 @@ const AdminDashboard = () => {
               <Grid item xs={6} sm={6} md={4} key={index}>
                 <Grow in timeout={800} style={{ transitionDelay: `${index * 100}ms` }}>
                   <StatCard component={Link} to={stat.link} gradient={stat.gradient}>
-                    <CardContent sx={{ position: 'relative', zIndex: 1, p: { xs: 2, sm: 3 } }}>
-                      <Box display="flex" justifyContent="space-between" alignItems="center" gap={1.5}>
+                    <CardContent sx={{ position: 'relative', zIndex: 1, p: { xs: 1.5, sm: 3 } }}>
+                      <Box display="flex" justifyContent="space-between" alignItems="center" gap={{ xs: 1, sm: 1.5 }}>
                         <Box sx={{ flex: 1, minWidth: 0 }}>
                           <Typography
                             variant="body2"
@@ -235,7 +235,8 @@ const AdminDashboard = () => {
                               whiteSpace: 'nowrap',
                               overflow: 'hidden',
                               textOverflow: 'ellipsis',
-                              fontSize: { xs: '0.75rem', sm: '0.875rem' }
+                              fontSize: { xs: '0.7rem', sm: '0.875rem' },
+                              mb: { xs: 0.5, sm: 1 }
                             }}
                           >
                             {stat.title}
@@ -244,13 +245,13 @@ const AdminDashboard = () => {
                             variant="h5"
                             fontWeight={800}
                             color="text.primary"
-                            sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}
+                            sx={{ fontSize: { xs: '1.1rem', sm: '1.5rem' } }}
                           >
                             {stat.value}
                           </Typography>
                         </Box>
                         <IconContainer bgcolor={stat.iconBg} sx={{ flexShrink: 0 }}>
-                          <stat.icon sx={{ color: 'white', fontSize: { xs: 20, sm: 28 } }} />
+                          <stat.icon sx={{ color: 'white', fontSize: { xs: 18, sm: 28 } }} />
                         </IconContainer>
                       </Box>
                     </CardContent>
