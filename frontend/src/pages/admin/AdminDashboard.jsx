@@ -221,22 +221,34 @@ const AdminDashboard = () => {
               <Grid item xs={6} sm={6} md={4} key={index}>
                 <Grow in timeout={800} style={{ transitionDelay: `${index * 100}ms` }}>
                   <StatCard component={Link} to={stat.link} gradient={stat.gradient}>
-                    <CardContent sx={{ position: 'relative', zIndex: 1 }}>
-                      <Box display="flex" justifyContent="space-between" alignItems="flex-start" gap={2}>
+                    <CardContent sx={{ position: 'relative', zIndex: 1, p: { xs: 2, sm: 3 } }}>
+                      <Box display="flex" justifyContent="space-between" alignItems="center" gap={1.5}>
                         <Box sx={{ flex: 1, minWidth: 0 }}>
-                          <Typography variant="body2" color="text.secondary" fontWeight={600} gutterBottom sx={{
-                            whiteSpace: 'nowrap',
-                            overflow: 'hidden',
-                            textOverflow: 'ellipsis'
-                          }}>
+                          <Typography
+                            variant="body2"
+                            color="text.secondary"
+                            fontWeight={600}
+                            gutterBottom
+                            sx={{
+                              whiteSpace: 'nowrap',
+                              overflow: 'hidden',
+                              textOverflow: 'ellipsis',
+                              fontSize: { xs: '0.75rem', sm: '0.875rem' }
+                            }}
+                          >
                             {stat.title}
                           </Typography>
-                          <Typography variant="h5" fontWeight={800} color="text.primary">
+                          <Typography
+                            variant="h5"
+                            fontWeight={800}
+                            color="text.primary"
+                            sx={{ fontSize: { xs: '1.25rem', sm: '1.5rem' } }}
+                          >
                             {stat.value}
                           </Typography>
                         </Box>
                         <IconContainer bgcolor={stat.iconBg} sx={{ flexShrink: 0 }}>
-                          <stat.icon sx={{ color: 'white', fontSize: 28 }} />
+                          <stat.icon sx={{ color: 'white', fontSize: { xs: 20, sm: 28 } }} />
                         </IconContainer>
                       </Box>
                     </CardContent>
