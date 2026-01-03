@@ -137,17 +137,18 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   fontSize: '0.875rem',
 }))
 
-const StyledTableHead = styled(TableHead)(({ theme }) => ({
-  '& .MuiTableCell-root': {
-    background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 100%)',
-    color: 'white',
-    fontWeight: 700,
-    fontSize: '0.875rem',
-    textTransform: 'uppercase',
-    letterSpacing: '0.5px',
-    borderBottom: 'none',
-  },
+const StyledHeaderCell = styled(TableCell)(({ theme }) => ({
+  background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 100%) !important',
+  color: 'white !important',
+  fontWeight: '700 !important',
+  fontSize: '0.875rem !important',
+  textTransform: 'uppercase',
+  letterSpacing: '0.5px',
+  borderBottom: 'none !important',
+  padding: `${theme.spacing(1.5)} !important`,
 }))
+
+const StyledTableHead = styled(TableHead)(({ theme }) => ({}))
 
 const StyledTableRow = styled(TableRow)(({ theme, error }) => ({
   transition: 'background-color 0.2s ease',

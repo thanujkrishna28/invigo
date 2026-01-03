@@ -71,22 +71,22 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   },
 }))
 
-const StyledTableHead = styled(TableHead)(({ theme }) => ({
-  '& .MuiTableCell-root': {
-    background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 100%)',
-    color: 'white',
-    fontWeight: 700,
-    fontSize: '0.875rem',
-    textTransform: 'uppercase',
-    letterSpacing: '0.5px',
-    borderBottom: 'none',
-    padding: theme.spacing(2),
-    [theme.breakpoints.down('sm')]: {
-      padding: theme.spacing(1.5),
-      fontSize: '0.75rem',
-    },
+const StyledHeaderCell = styled(TableCell)(({ theme }) => ({
+  background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 100%) !important',
+  color: 'white !important',
+  fontWeight: '700 !important',
+  fontSize: '0.875rem !important',
+  textTransform: 'uppercase',
+  letterSpacing: '0.5px',
+  borderBottom: 'none !important',
+  padding: `${theme.spacing(2)} !important`,
+  [theme.breakpoints.down('sm')]: {
+    padding: `${theme.spacing(1.5)} !important`,
+    fontSize: '0.75rem !important',
   },
 }))
+
+const StyledTableHead = styled(TableHead)(({ theme }) => ({}))
 
 const StyledTableRow = styled(TableRow)(({ theme }) => ({
   transition: 'background-color 0.2s ease',
@@ -406,13 +406,13 @@ const AdminSchedule = () => {
                       <Table>
                         <StyledTableHead>
                           <TableRow>
-                            <StyledTableCell>Exam ID</StyledTableCell>
-                            <StyledTableCell>Exam Name</StyledTableCell>
-                            <StyledTableCell>Course</StyledTableCell>
-                            <StyledTableCell>Date</StyledTableCell>
-                            <StyledTableCell>Time</StyledTableCell>
-                            <StyledTableCell>Status</StyledTableCell>
-                            <StyledTableCell align="center">Actions</StyledTableCell>
+                            <StyledHeaderCell>Exam ID</StyledHeaderCell>
+                            <StyledHeaderCell>Exam Name</StyledHeaderCell>
+                            <StyledHeaderCell>Course</StyledHeaderCell>
+                            <StyledHeaderCell>Date</StyledHeaderCell>
+                            <StyledHeaderCell>Time</StyledHeaderCell>
+                            <StyledHeaderCell>Status</StyledHeaderCell>
+                            <StyledHeaderCell align="center">Actions</StyledHeaderCell>
                           </TableRow>
                         </StyledTableHead>
                         <TableBody>
@@ -544,16 +544,16 @@ const AdminSchedule = () => {
                       <Table>
                         <StyledTableHead>
                           <TableRow>
-                            <StyledTableCell>Name</StyledTableCell>
-                            <StyledTableCell>Email</StyledTableCell>
-                            <StyledTableCell>Employee ID</StyledTableCell>
-                            <StyledTableCell sx={{ display: { xs: 'none', md: 'table-cell' } }}>
+                            <StyledHeaderCell>Name</StyledHeaderCell>
+                            <StyledHeaderCell>Email</StyledHeaderCell>
+                            <StyledHeaderCell>Employee ID</StyledHeaderCell>
+                            <StyledHeaderCell sx={{ display: { xs: 'none', md: 'table-cell' } }}>
                               Department
-                            </StyledTableCell>
-                            <StyledTableCell sx={{ display: { xs: 'none', md: 'table-cell' } }}>
+                            </StyledHeaderCell>
+                            <StyledHeaderCell sx={{ display: { xs: 'none', md: 'table-cell' } }}>
                               Campus
-                            </StyledTableCell>
-                            <StyledTableCell align="right">Workload</StyledTableCell>
+                            </StyledHeaderCell>
+                            <StyledHeaderCell align="right">Workload</StyledHeaderCell>
                           </TableRow>
                         </StyledTableHead>
                         <TableBody>
