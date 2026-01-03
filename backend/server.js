@@ -98,6 +98,11 @@ app.get('/api/health', (req, res) => {
   res.json({ status: 'OK', message: 'Schedulo API is running' });
 });
 
+// Root endpoint for UptimeRobot monitoring
+app.get('/', (req, res) => {
+  res.status(200).send('Server is active and running!');
+});
+
 // Start automatic cleanup service
 const cleanupService = require('./services/cleanupService');
 const CLEANUP_DAYS_OLD = parseInt(process.env.CLEANUP_DAYS_OLD) || 30; // Default: 30 days
