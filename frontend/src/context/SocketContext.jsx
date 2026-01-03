@@ -19,8 +19,8 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      // Get the API URL from env or default
-      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+      // Get the API URL from env or default to production Render URL
+      const apiUrl = import.meta.env.VITE_API_URL || 'https://invigo-qehc.onrender.com/api'
       // Remove '/api' suffix if present to get the root URL for socket.io
       const socketUrl = apiUrl.replace(/\/api\/?$/, '')
 

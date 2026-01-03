@@ -3,7 +3,7 @@ import axios from 'axios'
 // API URL configuration
 // In development: uses Vite proxy (/api -> http://localhost:5000)
 // In production: uses environment variable VITE_API_URL
-export const API_URL = import.meta.env.VITE_API_URL || '/api'
+export const API_URL = import.meta.env.VITE_API_URL || 'https://invigo-qehc.onrender.com/api'
 
 // Create axios instance with base configuration
 const api = axios.create({
