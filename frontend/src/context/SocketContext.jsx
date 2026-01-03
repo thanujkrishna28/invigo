@@ -19,8 +19,14 @@ export const SocketProvider = ({ children }) => {
 
   useEffect(() => {
     if (user) {
-      const newSocket = io('http://localhost:5000', {
-        transports: ['websocket']
+      // Get the API URL from env or default
+      const apiUrl = import.meta.env.VITE_API_URL || 'http://localhost:5000'
+      // Remove '/api' suffix if present to get the root URL for socket.io
+      const socketUrl = apiUrl.replace(/\/api\/?$/, '')
+
+      const newSocket = io(socketUrl, {
+        transports: ['websocket', 'polling'], // Add polling as fallback
+        withCredentials: true
       })
 
       newSocket.on('connect', () => {
