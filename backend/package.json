@@ -1,0 +1,52 @@
+{
+  "name": "schedulo-backend",
+  "version": "1.0.0",
+  "description": "Smart Campus Automation & Scheduling Platform - Backend",
+  "main": "server.js",
+  "scripts": {
+    "start": "node server.js",
+    "dev": "nodemon server.js",
+    "create-admin": "node scripts/createAdmin.js",
+    "create-faculty": "node scripts/createFaculty.js",
+    "create-hod": "node scripts/createHOD.js",
+    "import-admins": "node scripts/importAdminsFromCSV.js",
+    "import-faculty": "node scripts/importFacultyFromCSV.js",
+    "check-users": "node scripts/checkUsers.js",
+    "count-users": "node scripts/countUsers.js",
+    "test-email": "node scripts/testEmail.js",
+    "setup-env": "node scripts/setupEnv.js"
+  },
+  "keywords": [
+    "campus",
+    "automation",
+    "scheduling",
+    "invigilator"
+  ],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@emotion/react": "^11.14.0",
+    "@emotion/styled": "^11.14.1",
+    "@mui/material": "^7.3.6",
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "docx": "^9.5.1",
+    "dotenv": "^16.3.1",
+    "express": "^4.18.2",
+    "express-validator": "^7.0.1",
+    "jsonwebtoken": "^9.0.2",
+    "jspdf": "^2.5.1",
+    "moment": "^2.29.4",
+    "mongoose": "^7.5.0",
+    "multer": "^1.4.5-lts.1",
+    "nodemailer": "^6.9.7",
+    "papaparse": "^5.4.1",
+    "socket.io": "^4.6.1",
+    "xlsx": "^0.18.5"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.7",
+    "@types/react-dom": "^19.2.3",
+    "nodemon": "^3.0.1"
+  }
+}
