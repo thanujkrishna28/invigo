@@ -92,16 +92,18 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
   padding: theme.spacing(2),
 }))
 
-const StyledTableHead = styled(TableHead)(({ theme }) => ({
-  '& .MuiTableCell-root': {
-    background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 100%)',
-    color: 'white',
-    fontWeight: 700,
-    fontSize: '0.875rem',
-    textTransform: 'uppercase',
-    letterSpacing: '0.5px',
-  },
+const StyledHeaderCell = styled(TableCell)(({ theme }) => ({
+  background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 100%) !important',
+  color: 'white !important',
+  fontWeight: '700 !important',
+  fontSize: '0.875rem !important',
+  textTransform: 'uppercase',
+  letterSpacing: '0.5px',
+  padding: theme.spacing(2),
+  borderBottom: 'none !important',
 }))
+
+const StyledTableHead = styled(TableHead)(({ theme }) => ({}))
 
 const AdminDashboard = () => {
   const [stats, setStats] = useState(null)
@@ -274,11 +276,11 @@ const AdminDashboard = () => {
                   <Table>
                     <StyledTableHead>
                       <TableRow>
-                        <StyledTableCell>Date</StyledTableCell>
-                        <StyledTableCell>Time</StyledTableCell>
-                        <StyledTableCell>Faculty</StyledTableCell>
-                        <StyledTableCell>Exam</StyledTableCell>
-                        <StyledTableCell sx={{ display: { xs: 'none', md: 'table-cell' } }}>Campus</StyledTableCell>
+                        <StyledHeaderCell>Date</StyledHeaderCell>
+                        <StyledHeaderCell>Time</StyledHeaderCell>
+                        <StyledHeaderCell>Faculty</StyledHeaderCell>
+                        <StyledHeaderCell>Exam</StyledHeaderCell>
+                        <StyledHeaderCell sx={{ display: { xs: 'none', md: 'table-cell' } }}>Campus</StyledHeaderCell>
                       </TableRow>
                     </StyledTableHead>
                     <TableBody>
