@@ -138,8 +138,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }))
 
 const StyledTableHead = styled(TableHead)(({ theme }) => ({
-  background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 100%)',
   '& .MuiTableCell-root': {
+    background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 100%)',
     color: 'white',
     fontWeight: 700,
     fontSize: '0.875rem',

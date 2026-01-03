@@ -82,8 +82,8 @@ const IconContainer = styled(Box)(({ theme, bgcolor }) => ({
   boxShadow: '0 4px 12px rgba(26, 86, 219, 0.3)',
   transition: 'all 0.3s ease',
   [theme.breakpoints.down('sm')]: {
-    width: 48,
-    height: 48,
+    width: 40,
+    height: 40,
   },
 }))
 
@@ -93,8 +93,8 @@ const StyledTableCell = styled(TableCell)(({ theme }) => ({
 }))
 
 const StyledTableHead = styled(TableHead)(({ theme }) => ({
-  background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 100%)',
   '& .MuiTableCell-root': {
+    background: 'linear-gradient(135deg, #1a56db 0%, #1e40af 100%)',
     color: 'white',
     fontWeight: 700,
     fontSize: '0.875rem',
@@ -216,7 +216,7 @@ const AdminDashboard = () => {
           {/* Filters Removed */}{" "}
 
           {/* Statistics Grid */}
-          <Grid container spacing={3} mb={4}>
+          <Grid container spacing={{ xs: 2, md: 3 }} mb={4}>
             {statCards.map((stat, index) => (
               <Grid item xs={6} sm={6} md={4} key={index}>
                 <Grow in timeout={800} style={{ transitionDelay: `${index * 100}ms` }}>
